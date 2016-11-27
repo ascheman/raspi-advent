@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+JAR=/home/ascheman/wrk/raspi-advent/target/raspi-advent-1.0-SNAPSHOT.one-jar.jar
+
+/usr/bin/java -jar ${JAR} &
+echo $! > ${PIDFILE}
