@@ -44,36 +44,6 @@ class AdventController {
         }
     }
 
-    void first () {
-        log.info ("Starting with Advent #{}", 1)
-        adventLight[0].high()
-        Thread.sleep(DELAY_FOR_SINGLE_LIGHTS)
-    }
-
-    void second () {
-        log.info ("Proceeding with Advent #{}", 2)
-        adventLight[0].high()
-        adventLight[1].high()
-        Thread.sleep(DELAY_FOR_SINGLE_LIGHTS)
-    }
-
-    void third () {
-        log.info ("Proceeding with Advent #{}", 3)
-        adventLight[0].high()
-        adventLight[1].high()
-        adventLight[2].high()
-        Thread.sleep(DELAY_FOR_SINGLE_LIGHTS)
-    }
-
-    void fourth () {
-        log.info ("Proceeding with Advent #{}", 4)
-        adventLight[0].high()
-        adventLight[1].high()
-        adventLight[2].high()
-        adventLight[3].high()
-        Thread.sleep(DELAY_FOR_SINGLE_LIGHTS)
-    }
-
     void advent (int no) {
         log.info ("It is Advent #{}", no)
         for (int i = 0; i < no; i++) {

@@ -21,10 +21,6 @@ class AdventMain {
 
         while (true) {
             controller.reset()
-//            controller.first()
-//            controller.second()
-//            controller.third()
-//            controller.fourth()
             controller.advent(1)
             controller.advent(2)
             controller.advent(3)
