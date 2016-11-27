@@ -53,6 +53,18 @@ class AdventController {
         Thread.sleep(DELAY_FOR_SINGLE_LIGHTS)
     }
 
+    void current() {
+        AdventComputer ac = new AdventComputer()
+        int currentAdvent = ac.current()
+        if (0 == currentAdvent) {
+            over()
+        } else if (1 <= currentAdvent && currentAdvent <= 4) {
+            advent(currentAdvent)
+        } else {
+            throw new RuntimeException ("Advent #${currentAdvent} must never happen")
+        }
+    }
+
     void over () {
         log.info ("Advent is OVER")
         adventLight[0].high()

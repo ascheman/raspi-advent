@@ -16,6 +16,7 @@
         <groovy.version>1.8.6</groovy.version>
         <groovy-eclipse-batch.version>2.4.3-01</groovy-eclipse-batch.version>
         <groovy-eclipse-compiler.version>2.9.2-01</groovy-eclipse-compiler.version>
+        <joda-time.version>2.9.6</joda-time.version>
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <onejar-maven-plugin.version>1.4.4</onejar-maven-plugin.version>
@@ -44,6 +45,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
         </dependency>
     </dependencies>
 

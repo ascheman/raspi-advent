@@ -28,7 +28,7 @@ class AdventMain {
             controller.over()
 
             controller.reset()
-            controller.advent(2)
+            controller.current()
 
             Thread.sleep(15000)
             log.info ("Starting the loop again!")
