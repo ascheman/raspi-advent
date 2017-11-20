@@ -57,8 +57,10 @@ class AdventController {
         AdventComputer ac = new AdventComputer()
         int currentAdvent = ac.current()
         if (0 == currentAdvent) {
-            over()
+            log.info ("Currently out of Advent!")
+            blinkRed()
         } else if (1 <= currentAdvent && currentAdvent <= 4) {
+            log.info ("Currently it is Advent #{}", currentAdvent)
             advent(currentAdvent)
         } else {
             throw new RuntimeException ("Advent #${currentAdvent} must never happen")
@@ -66,11 +68,15 @@ class AdventController {
     }
 
     void over () {
-        log.info ("Advent is OVER")
+        log.info("Advent is OVER")
         adventLight[0].high()
         adventLight[1].high()
         adventLight[2].high()
         adventLight[3].high()
+        blinkRed()
+    }
+
+    void blinkRed () {
         adventLight[4].blink((int) BLINK_TIME / 10, BLINK_TIME)
         Thread.sleep(BLINK_TIME)
         adventLight[4].low()
