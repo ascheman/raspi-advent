@@ -4,6 +4,8 @@ import groovy.util.logging.Slf4j
 import org.joda.time.DateTimeConstants
 import org.joda.time.LocalDate
 
+import java.time.DayOfWeek
+
 /**
  * Created by ascheman on 27.11.16.
  */
@@ -16,12 +18,13 @@ class AdventComputer {
     }
 
     int current () {
-        // Christmas in current year!
-        LocalDate christmas = new LocalDate().withMonthOfYear(12).withDayOfMonth(24)
+        log.info ("Computing Advent for {}", today)
+        // Christmas in year of today!
+        LocalDate christmas = new LocalDate().withYear(today.year).withMonthOfYear(12).withDayOfMonth(24)
         log.info ("Christmas is {}", christmas)
         // If Christmas is on a sunday it is the fourth of Advent!
-        LocalDate advent4 = christmas.dayOfWeek() == DateTimeConstants.SUNDAY ? christmas :
-                christmas.withDayOfWeek(DateTimeConstants.SUNDAY).minusDays(7)
+        LocalDate advent4 = christmas.dayOfWeek == DayOfWeek.SUNDAY.value ? christmas :
+                christmas.withDayOfWeek(DayOfWeek.SUNDAY.value).minusDays(7)
         log.info ("Advent #4 is {}", advent4)
         LocalDate advent3 = advent4.minusDays(7)
         log.info ("Advent #3 is {}", advent3)
@@ -29,7 +32,6 @@ class AdventComputer {
         log.info ("Advent #2 is {}", advent2)
         LocalDate advent1 = advent2.minusDays(7)
         log.info ("Advent #1 is {}", advent1)
-        log.info ("Computing Advent for {}", today)
         if (today.isBefore(advent1) || today.isAfter(christmas)) {
             return 0
         } else if (today.isBefore(advent2)) {
@@ -39,6 +41,6 @@ class AdventComputer {
         } else if (today.isBefore(advent4)) {
             return 3
         }
-        return -1
+        return 4
     }
 }
