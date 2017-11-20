@@ -20,14 +20,23 @@ class AdventMain {
         AdventController controller = new AdventController()
 
         while (true) {
+            // Wer kennt nicht das tolle deutsche Gedicht?
             controller.reset()
+            // Advent, Advent, ein Lichtlein brennt
             controller.advent(1)
+            // Erst eins
             controller.advent(2)
+            // Dann zwei
             controller.advent(3)
+            // Dann drei
             controller.advent(4)
+            // Dann vier
             controller.over()
+            // Und wenn das fünfte Lichtlein brennt,
+            // Dann hast du Weihnachten verpennt!
 
             controller.reset()
+            // So jetzt nochmal den "richtigen" Advent anzeigen!
             controller.current()
 
             Thread.sleep(15000)
